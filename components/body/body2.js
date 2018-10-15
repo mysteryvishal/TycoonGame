@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Image, ScrollView, TouchableOpacity } from 'react-native';
 import styles from './bodyStyles';
-import { ProgressBar } from '../progressBar/progressBar'
+import { ProgressBar } from '../progressBar/progressBar1'
 // WU: what are all these inputs for
 
 // WU: what is the point of the test data
