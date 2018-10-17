@@ -19,8 +19,9 @@ const body = () => {
             </View>
             <ScrollView>
 
-                <Venture asset={Assets.OJS}/>
-                <Venture asset={Assets.NPS}/>
+                <Venture asset={Assets.OJS} />
+                <Venture asset={Assets.NPS} />
+                <Venture asset={Assets.MEC} />
 
                 <View style={styles.item}>
                     <View style={styles.container1}>
@@ -31,7 +32,6 @@ const body = () => {
                         </TouchableOpacity>
                         <View style={styles.container2}>
                             <Text style={styles.itemHeader}>Orange Juice Stand</Text>
-                            {/*<OrangeJuice.progressBar />*/}
                             <ProgressBar />
                         </View>
                     </View>
