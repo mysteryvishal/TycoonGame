@@ -1,11 +1,37 @@
 import React, { Component } from 'react';
-import { View, Text, Animated } from 'react-native';
+import { View, Text, Animated, StyleSheet, TouchableWithoutFeedback } from 'react-native';
+import styles from './progressBarStyles';
 
-export class ProgressBar extends Component {
-    constructor() {
-        state = {
+export default class ProgressBar extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
             animation: new Animated.Value(0),
             opacity: new Animated.Value(1),
+            presses: 0,
+        };
+        progressInterpolate = this.state.animation.interpolate({
+            inputRange: [0, 1],
+            outputRange: ['0%', '100%'],
+            extrapolate: 'clamp',
+        })
+        colorInterpolate = this.state.animation.interpolate({
+            inputRange: [0, 1],
+            outputRange: ['rgb(71,255,99)', 'rgb(99,71,255)'],
+        })
+    
+        this.progressStyle = {
+            width: progressInterpolate,
+            bottom: 0,
+            backgroundColor: colorInterpolate,
+            opacity: this.state.opacity,
+        }
+    }
+
+    componentWillReceiveProps(newProps) {
+        if (newProps.presses !== this.state.presses) {
+            this.setState({ presses: newProps.presses });
+            this.handlePress();
         }
     }
 
@@ -26,29 +52,12 @@ export class ProgressBar extends Component {
         });
     }
 
-    progressInterpolate = this.state.animation.interpolate({
-        inputRange: [0, 1],
-        outputRange: ['0%', '100%'],
-        extrapolate: 'clamp',
-    })
-    colorInterpolate = this.state.animation.interpolate({
-        inputRange: [0, 1],
-        outputRange: ['rgb(71,255,99)', 'rgb(99,71,255)'],
-    })
-
-    progressStyle = {
-        width: progressInterpolate,
-        bottom: 0,
-        backgroundColor: colorInterpolate,
-        opacity: this.state.opacity,
-    }
-
     render() {
         return (
             <TouchableWithoutFeedback>
                 <View style={styles.button}>
                     <View style={StyleSheet.absoluteFill}>
-                        <Animated.View style={[styles.progress, progressStyle]} />
+                        <Animated.View style={[styles.progress, this.progressStyle]} />
                     </View>
                     <Text style={styles.buttonText}>$ 1</Text>
                 </View>

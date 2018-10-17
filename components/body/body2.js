@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, Image, ScrollView, TouchableOpacity } from 'react-native';
 import styles from './bodyStyles';
+import Venture from '../ventures/Venture';
 import { ProgressBar } from '../progressBar/progressBar1'
 // WU: what are all these inputs for
 
@@ -16,6 +17,8 @@ const body = () => {
                 <Text style={styles.bank}>${money}</Text>
             </View>
             <ScrollView>
+
+                <Venture name="Orange Juice" />
 
                 <View style={styles.item}>
                     <View style={styles.container1}>
