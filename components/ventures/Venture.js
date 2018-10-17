@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, Image } from 'react-native';
 import styles from '../body/bodyStyles';
 import ProgressBar from '../progressBar/progressBar3';
+import Assets from './assets';
 
 export default class Venture extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            presses: 0
+            presses: 0,
         };
     }
 
@@ -22,11 +23,11 @@ export default class Venture extends Component {
                 <View style={styles.container1}>
                     <TouchableOpacity onPress={handlePress()}>
                         <View>
-                            <Image style={styles.image} source={require('../static/orange-juice.png')} />
+                            <Image style={styles.image} source={this.props.asset.image} />
                         </View>
                     </TouchableOpacity>
                     <View style={styles.container2}>
-                        <Text style={styles.itemHeader}>{this.props.name}</Text>
+                        <Text style={styles.itemHeader}>{this.props.asset.name}</Text>
                         <ProgressBar presses={this.state.presses} />
                     </View>
                 </View>
