@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, Text, Image, ScrollView, TouchableOpacity } from 'react-native';
 import styles from './bodyStyles';
-import Venture from '../ventures/Venture';
+import Venture from '../ventures/venture2';
 import Assets from '../ventures/assets';
-import { ProgressBar } from '../progressBar/progressBar1'
+import { ProgressBar } from '../../zztestbuilds/progressBar1'
 // WU: what are all these inputs for
 
 // WU: what is the point of the test data
@@ -22,7 +22,6 @@ const body = () => {
                 <Venture asset={Assets.OJS} />
                 <Venture asset={Assets.NPS} />
                 <Venture asset={Assets.MEC} />
-
                 <View style={styles.item}>
                     <View style={styles.container1}>
                         <TouchableOpacity onPress={handlePress} >

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { View, Text, Animated, TouchableWithoutFeedback, StyleSheet } from 'react-native';
-import styles from './progressBarStyles';
+import styles from '../components/progressBar/progressBarStyles';
 // import modules
 
 state = {

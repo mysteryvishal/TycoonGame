@@ -8,7 +8,6 @@ export default class ProgressBar extends Component {
         this.state = {
             animation: new Animated.Value(0),
             opacity: new Animated.Value(1),
-            presses: 0,
         };
         progressInterpolate = this.state.animation.interpolate({
             inputRange: [0, 1],
@@ -25,13 +24,6 @@ export default class ProgressBar extends Component {
             bottom: 0,
             backgroundColor: colorInterpolate,
             opacity: this.state.opacity,
-        }
-    }
-
-    componentWillReceiveProps(newProps) {
-        if (newProps.presses !== this.state.presses) {
-            this.setState({ presses: newProps.presses });
-            this.handlePress();
         }
     }
 
@@ -65,3 +57,5 @@ export default class ProgressBar extends Component {
         )
     }
 }
+
+exports.data = ProgressBar.handlePress()
