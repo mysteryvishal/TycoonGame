@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, Image } from 'react-native';
 import styles from '../body/bodyStyles';
-import ProgressBar from '../progressBar/progressBar3';
-import Assets from './assets';
+import ProgressBar from '../progressBar/progressBar';
+
+const progressBarBar = require('../progressBar/progressBar')
 
 export default class Venture extends Component {
     constructor(props) {
@@ -13,22 +14,22 @@ export default class Venture extends Component {
     }
 
     handlePress() {
-        this.setState({ presses: ++this.state.presses });
-        ProgressBar.handlePress
+        mon++
     }
 
     render() {
         return (
             <View style={styles.item}>
                 <View style={styles.container1}>
-                    <TouchableOpacity onPress={handlePress()}>
+                    <TouchableOpacity onPress={progressBarBar.handlePress()}>
                         <View>
                             <Image style={styles.image} source={this.props.asset.image} />
+                            <Text>{mon}</Text>
                         </View>
                     </TouchableOpacity>
                     <View style={styles.container2}>
                         <Text style={styles.itemHeader}>{this.props.asset.name}</Text>
-                        <ProgressBar presses={this.state.presses} />
+                        <ProgressBar />
                     </View>
                 </View>
             </View>
