@@ -1,4 +1,5 @@
 export default {
+    Money: 0,
     OJS: {
         name: 'Orange Juice Stand',
         image: require('../static/orange-juice.png'),
