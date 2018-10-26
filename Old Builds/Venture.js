@@ -14,7 +14,6 @@ export default class Venture extends Component {
     }
 
     handlePress() {
-        mon++
     }
 
     render() {

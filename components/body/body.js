@@ -17,7 +17,6 @@ const body = () => {
                 <Text style={styles.bank}>${money}</Text>
             </View>
             <ScrollView>
-
                 <Venture asset={Assets.OJS} />
                 <Venture asset={Assets.NPS} />
                 <Venture asset={Assets.MEC} />

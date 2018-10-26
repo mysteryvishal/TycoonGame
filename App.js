@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import Header from './components/header/header';
-import Body from './components/body/body2';
+import Body from './components/body/body';
 import styles from './components/mainStyles';
 
 export default class App extends Component {
