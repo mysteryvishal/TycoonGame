@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Alert, View, Text, TouchableOpacity, Image, Animated, TouchableWithoutFeedback, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, Image, Animated, TouchableWithoutFeedback, StyleSheet } from 'react-native';
 import styles from '../body/bodyStyles';
 import PBstyles from '../progressBar/progressBarStyles';
+import Assets from './assets';
 
 export default class Venture extends Component {
     constructor(props) {
@@ -43,7 +44,7 @@ export default class Venture extends Component {
                     duration: 200,
                 }).start();
                 // this is where the money bar will increase if it has finished
-
+                Assets.Money += this.props.asset.Ri
             }
         });
     }
@@ -66,7 +67,7 @@ export default class Venture extends Component {
                                 <View style={StyleSheet.absoluteFill}>
                                     <Animated.View style={[PBstyles.progress, this.progressStyle]} />
                                 </View>
-                                <Text style={PBstyles.buttonText}>$ 1</Text>
+                                <Text style={PBstyles.buttonText}>$ {this.props.asset.Ri}</Text>
                             </View>
                         </TouchableWithoutFeedback>
 
