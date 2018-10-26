@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Alert, View, Text, TouchableOpacity, Image, Animated, TouchableWithoutFeedback, StyleSheet } from 'react-native';
 import styles from '../body/bodyStyles';
-import PBstyles from '../progressBar/progressBarStyles'
+import PBstyles from '../progressBar/progressBarStyles';
 
 export default class Venture extends Component {
     constructor(props) {
@@ -40,8 +40,10 @@ export default class Venture extends Component {
             if (finished) {
                 Animated.timing(this.state.opacity, {
                     toValue: 0,
-                    duration: 200
+                    duration: 200,
                 }).start();
+                // this is where the money bar will increase if it has finished
+
             }
         });
     }
