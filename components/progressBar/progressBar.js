@@ -57,5 +57,3 @@ export default class ProgressBar extends Component {
         )
     }
 }
-
-exports.data = ProgressBar.handlePress()

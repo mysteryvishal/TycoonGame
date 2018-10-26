@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, Image, Animated, TouchableWithoutFeedback, StyleSheet } from 'react-native';
+import { Alert, View, Text, TouchableOpacity, Image, Animated, TouchableWithoutFeedback, StyleSheet } from 'react-native';
 import styles from '../body/bodyStyles';
 import PBstyles from '../progressBar/progressBarStyles'
-
 
 export default class Venture extends Component {
     constructor(props) {
@@ -11,26 +10,26 @@ export default class Venture extends Component {
             animation: new Animated.Value(0),
             opacity: new Animated.Value(1),
         };
-        
+
         progressInterpolate = this.state.animation.interpolate({
             inputRange: [0, 1],
             outputRange: ['0%', '100%'],
             extrapolate: 'clamp',
-        })
+        });
         colorInterpolate = this.state.animation.interpolate({
             inputRange: [0, 1],
             outputRange: ['rgb(71,255,99)', 'rgb(99,71,255)'],
-        })
-    
+        });
+
         this.progressStyle = {
             width: progressInterpolate,
             bottom: 0,
             backgroundColor: colorInterpolate,
             opacity: this.state.opacity,
-        }
+        };
     }
 
-    handlePress() {
+    handlePress = () => {
         this.state.animation.setValue(0);
         this.state.opacity.setValue(1);
 
@@ -51,7 +50,7 @@ export default class Venture extends Component {
         return (
             <View style={styles.item}>
                 <View style={styles.container1}>
-                    <TouchableOpacity onPress={this.handlePress()}>
+                    <TouchableOpacity onPress={this.handlePress}>
                         <View>
                             <Image style={styles.image} source={this.props.asset.image} />
                         </View>
