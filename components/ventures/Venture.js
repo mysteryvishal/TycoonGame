@@ -67,7 +67,6 @@ export default class Venture extends Component {
                                 <Text style={PBstyles.buttonText}>$ 1</Text>
                             </View>
                         </TouchableWithoutFeedback>
-                        {/*progressbar*/}
 
                     </View>
                 </View>

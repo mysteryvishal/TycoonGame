@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, ScrollView, TouchableOpacity } from 'react-native';
+import { View, Text, Image, ScrollView } from 'react-native';
 import styles from './bodyStyles';
 import Venture from '../ventures/venture';
 import Assets from '../ventures/assets';
