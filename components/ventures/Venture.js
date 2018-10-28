@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, Image, Animated, TouchableWithoutFeedback, StyleSheet } from 'react-native';
 import styles from '../body/bodyStyles';
 import PBstyles from '../progressBar/progressBarStyles';
-import Assets from './assets';
 
 export default class Venture extends Component {
     constructor(props) {
@@ -43,8 +42,6 @@ export default class Venture extends Component {
                     toValue: 0,
                     duration: 200,
                 }).start();
-                // this is where the money bar will increase if it has finished
-                Assets.Money += this.props.asset.Ri
             }
         });
     }
