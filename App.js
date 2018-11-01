@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import Header from './components/header/header';
 import Body from './components/body/body';
-import styles from './components/mainStyles';
 
 export default class App extends Component {
     render() {
@@ -16,3 +15,10 @@ export default class App extends Component {
         );
     }
 }
+
+const styles = StyleSheet.create({
+    app: {
+        backgroundColor: '#FFD54F',
+        flex: 1,
+    }
+});
