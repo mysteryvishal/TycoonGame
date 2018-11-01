@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, Image, Animated, TouchableWithoutFeedback, StyleSheet } from 'react-native';
-import styles from '../body/bodyStyles';
-import PBstyles from '../progressBar/progressBarStyles';
+import styles from '../body/BodyStyles';
+import PBstyles from '../progressBar/ProgressBarStyles';
 
 export default class Venture extends Component {
     constructor(props) {

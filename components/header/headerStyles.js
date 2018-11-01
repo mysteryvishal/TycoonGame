@@ -1,4 +1,4 @@
-import { StyleSheet, StatusBar } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
     header: {
@@ -7,7 +7,6 @@ export default StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         alignSelf: 'flex-start',
-        //marginTop: StatusBar.currentHeight,
         width: '100%',
         paddingTop: 20,
         paddingBottom: 20,

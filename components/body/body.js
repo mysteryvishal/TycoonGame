@@ -1,13 +1,14 @@
 import React from 'react';
 import { View, Text, ScrollView, AsyncStorage, TouchableOpacity } from 'react-native';
-import styles from './bodyStyles';
-import Venture from '../ventures/venture';
-import Assets from '../ventures/assets';
+import styles from './BodyStyles';
+import Venture from '../ventures/Venture';
+import Assets from '../ventures/Assets';
 // WU: what are all these inputs for
 // WU: what is the point of the test data
-
-let money = 0;
 // this works when money is a string but not when it is a integer.. need to find a new way around this..
+
+let money = 5000;
+
 let ventures = {
     OJS: {
         name: 'Orange Juice Stand',
@@ -21,28 +22,34 @@ let ventures = {
     },
 };
 
-displayData = async () => {
+AsyncStorage.setItem('money', money.toString());
+
+AsyncStorage.setItem('ventures', JSON.stringify(ventures));
+
+getMoney = async () => {
     try {
-        let money = await AsyncStorage.getItem('money');
-        alert(money)
+        let money = Number(await AsyncStorage.getItem('money'));
+        return money
+    }
+    catch (error) {}
+}
+
+getVentures = async () => {
+    try {
+        let ventures = await AsyncStorage.getItem('ventures');
+        alert(ventures)
     }
     catch (error) {
         alert(error)
     }
-    
 }
 
 const body = () => {
-    AsyncStorage.setItem('money', money);
-    
-    AsyncStorage.setItem('ventures', JSON.stringify(ventures));
     return (
         <View style={styles.itemsContainer}>
             <View style={styles.bankContainer}>
-                <Text style={styles.bank}>$ {Assets.Money}</Text>
+                <Text style={styles.bank}>$ {}</Text>
             </View>
-            
-            <TouchableOpacity onPress={this.displayData}><Text>disp</Text></TouchableOpacity>
 
             <ScrollView>
                 <Venture asset={Assets.OJS} />
