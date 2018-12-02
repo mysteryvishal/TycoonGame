@@ -56,5 +56,3 @@ buck-out/
 *.jsbundle
 
 # Other
-Old_Builds/
-data/
