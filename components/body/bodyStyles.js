@@ -1,14 +1,16 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-    body: {
+    // Main Body
+    body: {// this isnt used
         alignItems: 'center',
         alignContent: 'center',
         justifyContent: 'center',
         marginVertical: 20,
         backgroundColor: '#FFD54F',
     },
-    bank: {
+    // Bank
+    bankText: {
         justifyContent: 'center',
         alignSelf: 'center',
         fontSize: 20,
@@ -18,13 +20,14 @@ export default StyleSheet.create({
         paddingVertical: 5,
         marginBottom: 5,
     },
-
+    // Parent Container
     itemsContainer: {
         flex: 1,
         flexDirection: 'column',
         justifyContent: 'space-between',
         alignItems: 'stretch',
     },
+    // Unused styles... till end
     itemHeader: {
         color: 'black',
         fontSize: 18,
@@ -32,6 +35,7 @@ export default StyleSheet.create({
         alignSelf: 'center',
         color: '#fff'
     },
+    
     item: {
         backgroundColor: '#FFC107',
         flexDirection: 'row',
@@ -40,7 +44,7 @@ export default StyleSheet.create({
         marginVertical: 10,
         paddingVertical: 10,
     },
-
+    
     container1: {
         flex: 1,
         marginHorizontal: 10,
@@ -59,7 +63,7 @@ export default StyleSheet.create({
         resizeMode: 'contain',
         borderRadius: 10,
     },
-
+    // Progress Bar
     progressBar: {
         paddingVertical: 10,
     }
