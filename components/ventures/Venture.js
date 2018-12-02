@@ -58,7 +58,7 @@ export default class Venture extends Component {
                     <View style={styles.container2}>
                         <Text style={styles.itemHeader}>{this.props.asset.name}</Text>
 
-                        {/*progressbar*/}
+                        { /* Progress Bar */ }
                         <TouchableWithoutFeedback>
                             <View style={PBstyles.button}>
                                 <View style={StyleSheet.absoluteFill}>
