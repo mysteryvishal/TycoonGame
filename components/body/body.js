@@ -1,11 +1,8 @@
 import React from 'react';
-import { View, Text, ScrollView, AsyncStorage, TouchableOpacity } from 'react-native';
+import { View, Text, ScrollView, AsyncStorage } from 'react-native';
 import styles from './BodyStyles';
 import Venture from '../ventures/Venture';
 import Assets from '../ventures/Assets';
-// WU: what are all these inputs for
-// WU: what is the point of the test data
-// this works when money is a string but not when it is a integer.. need to find a new way around this..
 
 let money = 5000;
 
@@ -48,19 +45,17 @@ const body = () => {
     return (
         <View style={styles.itemsContainer}>
             <View style={styles.bankContainer}>
-                <Text style={styles.bank}>$ {}</Text>
+                <Text style={styles.bankText}>$ {Assets.Money}</Text>
             </View>
 
             <ScrollView>
                 <Venture asset={Assets.OJS} />
                 <Venture asset={Assets.NPS} />
-                {/* Other Ventures
                 <Venture asset={Assets.SHP} />
                 <Venture asset={Assets.MEC} />
                 <Venture asset={Assets.HTC} />
                 <Venture asset={Assets.FLM} />
                 <Venture asset={Assets.ROK} />
-                */}
             </ScrollView>
         </View>
     );
