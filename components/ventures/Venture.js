@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, Image, Animated, TouchableWithoutFeedback, StyleSheet } from 'react-native';
-import styles from '../body/BodyStyles';
-import PBstyles from '../progressBar/ProgressBarStyles';
+import styles from './VentureStyles2.js';
 
 export default class Venture extends Component {
     constructor(props) {
@@ -48,25 +47,23 @@ export default class Venture extends Component {
 
     render() {
         return (
-            <View style={styles.item}>
-                <View style={styles.container1}>
+            <View style={[styles.item, styles.column]}>
+                <View style={styles.row}>
+                    
                     <TouchableOpacity onPress={this.handlePress}>
-                        <View>
-                            <Image style={styles.image} source={this.props.asset.image} />
-                        </View>
+                        <Image style={styles.image} source={this.props.asset.image} />
                     </TouchableOpacity>
-                    <View style={styles.container2}>
+
+                    <View style={[styles.container2, styles.column ]}>
                         <Text style={styles.itemHeader}>{this.props.asset.name}</Text>
 
                         { /* Progress Bar */ }
-                        <TouchableWithoutFeedback>
-                            <View style={PBstyles.button}>
-                                <View style={StyleSheet.absoluteFill}>
-                                    <Animated.View style={[PBstyles.progress, this.progressStyle]} />
-                                </View>
-                                <Text style={PBstyles.buttonText}>$ {this.props.asset.Ri}</Text>
+                        <View style={styles.button}>
+                            <View style={StyleSheet.absoluteFill}>
+                                <Animated.View style={[styles.progress, this.progressStyle]} />
                             </View>
-                        </TouchableWithoutFeedback>
+                            <Text style={styles.buttonText}>$ {this.props.asset.Ri}</Text>
+                        </View>
 
                     </View>
                 </View>
