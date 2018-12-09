@@ -3,17 +3,19 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
     item: {
         backgroundColor: '#FFC107',
-        flexDirection: 'row',
-        justifyContent: 'center',
         alignSelf: 'stretch',
         marginVertical: 10,
         paddingVertical: 10,
+        paddingHorizontal: 10,
     },
-    container1: {
-        flex: 1,
-        marginHorizontal: 10,
+    row: {
         flexDirection: 'row',
         justifyContent: 'flex-start',
+    },
+    column: {
+        flexDirection: 'column',
+        justifyContent: 'center',
+        flex: 1,
     },
     image: {
         height: 80,
@@ -24,10 +26,9 @@ export default StyleSheet.create({
     },
     container2: {
         marginHorizontal: 10,
-        flexDirection: 'column',
-        flex: 1
     },
     itemHeader: {
+        color: 'black',
         fontSize: 18,
         marginBottom: 8,
         alignSelf: 'center',

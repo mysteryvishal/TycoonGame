@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, Image, Animated, TouchableWithoutFeedback, StyleSheet } from 'react-native';
-import styles from './VentureStyles2.js';
+import styles from './VentureStyles.js';
 
 export default class Venture extends Component {
     constructor(props) {
