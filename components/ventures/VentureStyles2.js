@@ -45,7 +45,7 @@ export default StyleSheet.create({
         paddingVertical: 8,
         overflow: 'hidden',
     },
-    buttonText: {
+    progressBarText: {
         color: '#fff',
         fontSize: 16,
         fontWeight: 'bold',
