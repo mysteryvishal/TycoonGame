@@ -36,7 +36,7 @@ export default StyleSheet.create({
     },
 
     // Progress Bar
-    button: {
+    progressBar: {
         backgroundColor: '#999',
         borderRadius: 10,
         alignItems: 'center',

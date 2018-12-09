@@ -58,7 +58,7 @@ export default class Venture extends Component {
                         <Text style={styles.itemHeader}>{this.props.asset.name}</Text>
 
                         { /* Progress Bar */ }
-                        <View style={styles.button}>
+                        <View style={styles.progressBar}>
                             <View style={StyleSheet.absoluteFill}>
                                 <Animated.View style={[styles.progress, this.progressStyle]} />
                             </View>

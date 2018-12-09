@@ -28,7 +28,6 @@ export default StyleSheet.create({
         flex: 1
     },
     itemHeader: {
-        color: 'black',
         fontSize: 18,
         marginBottom: 8,
         alignSelf: 'center',
@@ -36,7 +35,7 @@ export default StyleSheet.create({
     },
 
     // Progress Bar
-    button: {
+    progressBar: {
         backgroundColor: '#999',
         borderRadius: 10,
         alignItems: 'center',
