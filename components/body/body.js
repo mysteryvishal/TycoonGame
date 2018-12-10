@@ -15,6 +15,31 @@ let ventures = {
         image: require('../static/newspaper.jpg'),
         Ri: 5,
     },
+    SHP: {
+        name: 'Shop',
+        image: require('../static/shop.png'),
+        Ri: 50,
+    },
+    PHN: {
+        name: 'Phone Company',
+        image: require('../static/phone.png'),
+        Ri: 1000,
+    },
+    MEC: {
+        name: 'Mechanics',
+        image: require('../static/mechanic.png'),
+        Ri: 300,
+    },
+    HTC: {
+        name: 'Hotel Business',
+        image: require('../static/hotel-business.png'),
+        Ri: 10000,
+    },
+    FLM: {
+        name: 'Film Studio',
+        image: require('../static/film.png'),
+        Ri: 100000,
+    },
 };
 
 export default class Body extends Component {
@@ -46,6 +71,11 @@ export default class Body extends Component {
                 <ScrollView>
                     <Venture asset={'OJS'} />
                     <Venture asset={'NPS'} />
+                    <Venture asset={'SHP'} />
+                    <Venture asset={'PHN'} />
+                    <Venture asset={'MEC'} />
+                    <Venture asset={'HTC'} />
+                    <Venture asset={'FLM'} />
                 </ScrollView>
             </View>
         );

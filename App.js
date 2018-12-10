@@ -7,8 +7,6 @@ export default class App extends Component {
     render() {
         return (
             <View style={styles.app}>
-                {/*WU: why is the program modular like this*/}
-
                 <Header />
                 <Body />
             </View>
