@@ -56,4 +56,3 @@ buck-out/
 *.jsbundle
 
 # Other
-components/progressBar/

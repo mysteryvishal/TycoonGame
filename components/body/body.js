@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ScrollView, AsyncStorage } from 'react-native';
+import { View, Text, ScrollView, AsyncStorage, TouchableOpacity } from 'react-native';
 import styles from './BodyStyles';
 import Venture from '../ventures/Venture';
 import Assets from '../ventures/Assets';
@@ -47,7 +47,9 @@ const body = () => {
             <View style={styles.bankContainer}>
                 <Text style={styles.bankText}>$ {Assets.Money}</Text>
             </View>
-
+            <TouchableOpacity onPress={}>
+                <Text>HElloooooo</Text>
+            </TouchableOpacity>
             <ScrollView>
                 <Venture asset={Assets.OJS} />
                 <Venture asset={Assets.NPS} />
