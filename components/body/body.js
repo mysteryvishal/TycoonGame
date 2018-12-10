@@ -1,11 +1,9 @@
-import React from 'react';
-import { View, Text, ScrollView, AsyncStorage, TouchableOpacity } from 'react-native';
+import React, { Component } from 'react';
+import { View, Text, ScrollView, AsyncStorage } from 'react-native';
 import styles from './BodyStyles';
 import Venture from '../ventures/Venture';
-import Assets from '../ventures/Assets';
 
 let money = 5000;
-
 let ventures = {
     OJS: {
         name: 'Orange Juice Stand',
@@ -19,48 +17,37 @@ let ventures = {
     },
 };
 
-AsyncStorage.setItem('money', money.toString());
+export default class Body extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {}
+        this.onPress = () => this.getVentures(this)
 
-AsyncStorage.setItem('ventures', JSON.stringify(ventures));
+        AsyncStorage.setItem('money', money.toString())
+        AsyncStorage.setItem('ventures', JSON.stringify(ventures))
 
-getMoney = async () => {
-    try {
-        let money = Number(await AsyncStorage.getItem('money'));
-        return money
+        setInterval(async () => {
+            this.setState({ money: await AsyncStorage.getItem('money') });
+        }, 1000 / 5);
+        // js race condition (good to talk about :)
     }
-    catch (error) {}
-}
 
-getVentures = async () => {
-    try {
-        let ventures = await AsyncStorage.getItem('ventures');
-        alert(ventures)
+    async componentDidMount() {
+        this.setState({ money: await AsyncStorage.getItem('money') });
     }
-    catch (error) {
-        alert(error)
-    }
-}
 
-const body = () => {
-    return (
-        <View style={styles.itemsContainer}>
-            <View style={styles.bankContainer}>
-                <Text style={styles.bankText}>$ {Assets.Money}</Text>
+    render() {
+        return(
+            <View style={styles.itemsContainer}>
+                <View style={styles.bankContainer}>
+                    <Text style={styles.bankText}>$ {this.state.money}</Text>
+                </View>
+
+                <ScrollView>
+                    <Venture asset={'OJS'} />
+                    <Venture asset={'NPS'} />
+                </ScrollView>
             </View>
-            <TouchableOpacity onPress={}>
-                <Text>HElloooooo</Text>
-            </TouchableOpacity>
-            <ScrollView>
-                <Venture asset={Assets.OJS} />
-                <Venture asset={Assets.NPS} />
-                <Venture asset={Assets.SHP} />
-                <Venture asset={Assets.MEC} />
-                <Venture asset={Assets.HTC} />
-                <Venture asset={Assets.FLM} />
-                <Venture asset={Assets.ROK} />
-            </ScrollView>
-        </View>
-    );
+        );
+    }
 }
-
-export default body;
