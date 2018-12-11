@@ -36,6 +36,18 @@ export default class Venture extends Component {
         this.setState({ venture });
     }
 
+    multiply = async () => {
+        money = parseInt(await AsyncStorage.getItem('money'))
+        if (money >= this.state.venture.ppv) {
+            money -= this.state.venture.ppv
+            await AsyncStorage.setItem('money', money.toString());
+            this.state.venture.Nv++
+            this.state.venture.ppv = (this.state.venture.ppv * 1.5).toFixed(2)
+            this.state.venture.Ri = this.state.venture.Ri * this.state.venture.Nv
+        }
+
+    }
+
     handlePress = async () => {
         this.state.animation.setValue(0);
         this.state.opacity.setValue(1);
@@ -50,7 +62,7 @@ export default class Venture extends Component {
                     duration: 200,
                 }).start();
             }
-            const money = parseInt(await AsyncStorage.getItem('money')) + this.state.venture.Ri;
+            const money = parseInt(await AsyncStorage.getItem('money')) + (this.state.venture.Ri);
             await AsyncStorage.setItem('money', money.toString());
         });
     }
@@ -61,22 +73,40 @@ export default class Venture extends Component {
 
                 <View style={styles.row}>
                     
-                    <TouchableOpacity onPress={this.handlePress}>
-                        <Image style={styles.image} source={this.state.venture.image} />
-                    </TouchableOpacity>
-
+                    {/* Column containing image and numbers of ventures */}
+                    <View styles={styles.column}>
+                        <TouchableOpacity onPress={this.handlePress}>
+                            <Image style={styles.image} source={this.state.venture.image} />
+                        </TouchableOpacity>
+                        <View style={styles.circle}>
+                            <Text style={styles.buttonText}>{this.state.venture.Nv}</Text>
+                        </View>
+                    </View>
+                    
+                    {/* column containing name, progress bar and venture manager */}
                     <View style={[styles.container2, styles.column ]}>
-                        <Text style={styles.itemHeader}>{this.state.venture.name}</Text>
+                        <Text style={[styles.itemHeader, styles.whiteText]}>{this.state.venture.name}</Text>
 
                         { /* Progress Bar */ }
                         <View style={styles.progressBar}>
                             <View style={StyleSheet.absoluteFill}>
                                 <Animated.View style={[styles.progress, this.progressStyle]} />
                             </View>
-                            <Text style={styles.progressBarText}>$ {this.state.venture.Ri}</Text>
+                            <Text style={[styles.progressBarText, styles.whiteText]}>$ {this.state.venture.Ri}</Text>
+                        </View>
+                        
+                        {/* Venture Manager */}
+                        <View style={[styles.pill, styles.row]}>
+                            <View style={styles.pillInner}>
+                                <Text style={styles.whiteText}>{this.state.venture.ppv}</Text>    
+                            </View>
+                            <TouchableOpacity style={styles.button} onPress={this.multiply}>
+                                <Text style={styles.buttonText}>Buy</Text>
+                            </TouchableOpacity>
                         </View>
 
                     </View>
+                    
                 </View>
             </View>
         );

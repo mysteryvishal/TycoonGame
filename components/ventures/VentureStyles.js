@@ -32,6 +32,40 @@ export default StyleSheet.create({
         fontSize: 18,
         marginBottom: 8,
         alignSelf: 'center',
+    },
+
+    button: {
+        paddingHorizontal: 30,
+        paddingVertical: 10,
+        backgroundColor: '#4B994D',
+        borderRadius: 10,
+    },
+    buttonText: {
+        alignSelf: 'center',
+        color: '#fff',
+    },
+    circle: {
+        width: 80,
+        marginTop: 5,
+        marginHorizontal: 10, 
+        borderRadius: 10,
+        paddingHorizontal: 10,
+        paddingVertical: 5,
+        backgroundColor: '#999',
+    },
+    pill: {
+        marginTop: 5,
+    },
+    pillInner: {
+        flex: 1,
+        justifyContent: 'space-between',
+        backgroundColor: '#ff8307',
+        marginRight: 5,
+        borderRadius: 10,
+        alignItems: 'center',
+        paddingVertical: 10,
+    },
+    whiteText: {
         color: '#fff'
     },
 
@@ -46,7 +80,6 @@ export default StyleSheet.create({
         overflow: 'hidden',
     },
     progressBarText: {
-        color: '#fff',
         fontSize: 16,
         fontWeight: 'bold',
         backgroundColor: 'transparent',
