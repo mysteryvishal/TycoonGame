@@ -11,6 +11,7 @@ let ventures = {
         Ri: 1,
         Nv: 1,
         ppv: 100,
+        Tc: 1500,
     },
     NPS: {
         name: 'Newspaper Stand',
@@ -18,6 +19,7 @@ let ventures = {
         Ri: 5,
         Nv: 1,
         ppv: 500,
+        Tc: 5000
     },
     SHP: {
         name: 'Shop',
@@ -25,6 +27,7 @@ let ventures = {
         Ri: 50,
         Nv: 1,
         ppv: 1000,
+        Tc: 60000
     },
     PHN: {
         name: 'Phone Company',
@@ -32,6 +35,7 @@ let ventures = {
         Ri: 1000,
         Nv: 1,
         ppv: 100000,
+        Tc: 120000,
     },
     MEC: {
         name: 'Mechanics',
@@ -39,6 +43,7 @@ let ventures = {
         Ri: 300,
         Nv: 1,
         ppv: 500000,
+        Tc: 300000
     },
     HTC: {
         name: 'Hotel Business',
@@ -46,6 +51,7 @@ let ventures = {
         Ri: 10000,
         Nv: 1,
         ppv: 1000000,
+        Tc: 600000,
     },
     FLM: {
         name: 'Film Studio',
@@ -53,6 +59,7 @@ let ventures = {
         Ri: 100000,
         Nv: 1,
         ppv: 5000000,
+        Tc: 900000,
     },
 };
 
@@ -76,7 +83,7 @@ export default class Body extends Component {
     }
 
     render() {
-        return(
+        return (
             <View style={styles.itemsContainer}>
                 <View style={styles.bankContainer}>
                     <Text style={styles.bankText}>$ {this.state.money}</Text>
