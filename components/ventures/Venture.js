@@ -42,28 +42,26 @@ export default class Venture extends Component {
             money -= this.state.venture.ppv
             await AsyncStorage.setItem('money', money.toString());
             this.state.venture.Nv++
-            this.state.venture.ppv = (this.state.venture.ppv * 1.5).toFixed(2)
-            this.state.venture.Ri = this.state.venture.Ri * this.state.venture.Nv
+            this.state.venture.ppv = (this.state.venture.ppv * 2).toFixed(2)
         }
-
     }
 
-    handlePress = async () => {
+    handlePress = () => {
         this.state.animation.setValue(0);
         this.state.opacity.setValue(1);
 
         Animated.timing(this.state.animation, {
             toValue: 1,
-            duration: 1500,
+            duration: this.state.venture.Tc,
         }).start(async ({ finished }) => {
             if (finished) {
                 Animated.timing(this.state.opacity, {
                     toValue: 0,
                     duration: 200,
                 }).start();
+                const money = parseInt(await AsyncStorage.getItem('money')) + (this.state.venture.Ri * this.state.venture.Nv);
+                await AsyncStorage.setItem('money', money.toString());
             }
-            const money = parseInt(await AsyncStorage.getItem('money')) + (this.state.venture.Ri);
-            await AsyncStorage.setItem('money', money.toString());
         });
     }
 
@@ -92,7 +90,7 @@ export default class Venture extends Component {
                             <View style={StyleSheet.absoluteFill}>
                                 <Animated.View style={[styles.progress, this.progressStyle]} />
                             </View>
-                            <Text style={[styles.progressBarText, styles.whiteText]}>$ {this.state.venture.Ri}</Text>
+                            <Text style={[styles.progressBarText, styles.whiteText]}>$ {this.state.venture.Ri * this.state.venture.Nv}</Text>
                         </View>
                         
                         {/* Venture Manager */}
