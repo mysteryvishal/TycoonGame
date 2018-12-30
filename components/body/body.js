@@ -67,15 +67,13 @@ export default class Body extends Component {
     constructor(props) {
         super(props);
         this.state = {}
-        this.onPress = () => this.getVentures(this)
 
         AsyncStorage.setItem('money', money.toString())
         AsyncStorage.setItem('ventures', JSON.stringify(ventures))
 
         setInterval(async () => {
             this.setState({ money: await AsyncStorage.getItem('money') });
-        }, 1000 / 0.8);
-        // js race condition (good to talk about :)
+        }, 1000 / 2);
     }
 
     async componentDidMount() {
@@ -102,3 +100,6 @@ export default class Body extends Component {
         );
     }
 }
+
+
+// js race condition (good to talk about :)
