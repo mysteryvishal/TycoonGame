@@ -76,7 +76,7 @@ export default class Venture extends Component {
                         <TouchableOpacity onPress={this.handlePress}>
                             <Image style={styles.image} source={this.state.venture.image} />
                         </TouchableOpacity>
-                        <View style={styles.circle}>
+                        <View style={styles.ventureCount}>
                             <Text style={styles.buttonText}>{this.state.venture.Nv}</Text>
                         </View>
                     </View>
@@ -96,7 +96,7 @@ export default class Venture extends Component {
                         {/* Venture Manager */}
                         <View style={[styles.pill, styles.row]}>
                             <View style={styles.pillInner}>
-                                <Text style={styles.whiteText}>{this.state.venture.ppv}</Text>    
+                                <Text style={styles.whiteText}>${this.state.venture.ppv}</Text>    
                             </View>
                             <TouchableOpacity style={styles.button} onPress={this.multiply}>
                                 <Text style={styles.buttonText}>Buy</Text>
